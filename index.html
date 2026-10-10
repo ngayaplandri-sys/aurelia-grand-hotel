@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>AURELIA GRAND · Hôtel & Resort · Un séjour extraordinaire</title>
+  <meta name="description" content="Aurelia Grand Hotel & Resort : une visite cinématographique et photographique d'un hôtel de luxe de travertin, de bronze et de lumière, au bord de la mer. Démonstration de concept, détails fictifs.">
+  <meta name="theme-color" content="#0b0907">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:locale:alternate" content="en_GB">
+  <meta property="og:title" content="AURELIA GRAND · Hôtel & Resort">
+  <meta property="og:description" content="Un séjour extraordinaire. Démonstration de concept d'un site d'hôtel de luxe : des photographies uniquement, aucune vidéo.">
+  <meta property="og:image" content="assets/img/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+  <link rel="preload" href="assets/fonts/cormorant-garamond-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/hanken-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- build:hero-preload -->
+  <link rel="preload" as="image" type="image/avif" media="(min-width: 768px) and (orientation: landscape)" imagesrcset="assets/img/facade-768.avif 768w, assets/img/facade-1280.avif 1280w, assets/img/facade-1920.avif 1920w, assets/img/facade-2560.avif 2560w" imagesizes="100vw" fetchpriority="high">
+  <link rel="preload" as="image" type="image/avif" media="(max-width: 767px), (orientation: portrait)" imagesrcset="assets/img/facade-m-540.avif 540w, assets/img/facade-m-800.avif 800w, assets/img/facade-m-1080.avif 1080w, assets/img/facade-m-1440.avif 1440w" imagesizes="100vw" fetchpriority="high">
+  <!-- /build:hero-preload -->
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/tour.css">
+  <link rel="stylesheet" href="assets/css/sections.css">
+  <link rel="stylesheet" href="assets/css/overlays.css">
+  <!-- Choix du mode avant le premier rendu : "cinématique" (la visite guidée par le défilement) ou "fixe" (photographies et textes
+       à la suite, sans mouvement : mouvement réduit demandé, économie de données, mémoire faible, ou ?fixe dans l'adresse),
+       et de la langue (?lang=en ou ?lang=fr, choix mémorisé, sinon FRANÇAIS : langue par défaut, à garder identique dans assets/js/lib/core.js). -->
+  <script>
+    (function () {
+      var d = document.documentElement, q = new URLSearchParams(location.search);
+      var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var c = navigator.connection, saveData = !!(c && c.saveData);
+      var lowMem = navigator.deviceMemory && navigator.deviceMemory < 2;
+      var cinematic = !q.has("fixe") && !q.has("static") && !reduce && !saveData && !lowMem;
+      d.classList.add("js", cinematic ? "is-cinematic" : "is-static");
+      if (!reduce) d.classList.add("js-reveal");
+      var lang = q.get("lang");
+      if (!lang) { try { lang = localStorage.getItem("aurelia-lang"); } catch (e) {} }
+      d.lang = lang === "en" ? "en" : "fr";
+      // Filet de sécurité : si les scripts n'ont pas démarré, le contenu masqué par les apparitions reste lisible.
+      setTimeout(function () { if (!window.AURELIA || !window.AURELIA.ready) d.classList.remove("js-reveal"); }, 6000);
+    })();
+  </script>
+</head>
+<body>
+  <!-- Icônes : traits fins, une seule épaisseur -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h17M14 6l6 6-6 6"/></symbol>
+      <symbol id="i-arrow-up-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8.5 7H17v8.5"/></symbol>
+      <symbol id="i-arrow-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v17M6 14l6 6 6-6"/></symbol>
+      <symbol id="i-chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></symbol>
+      <symbol id="i-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+      <symbol id="i-warning" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l9.5 16.5h-19z"/><path d="M12 10v4.5M12 17.4v.1"/></symbol>
+      <symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.6v.1"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 4h3.3l1.9 4.7-2.3 1.5a11 11 0 005.4 5.4l1.5-2.3L20 15.2v3.3A1.8 1.8 0 0118.2 20 15.2 15.2 0 014 5.8 1.8 1.8 0 015.5 4z"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="1"/><path d="M3.5 7l8.5 6 8.5-6"/></symbol>
+      <symbol id="i-map-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6 7-11.3A7 7 0 005 9.7C5 15 12 21 12 21z"/><circle cx="12" cy="9.6" r="2.5"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5.5" width="16" height="14.5" rx="1"/><path d="M4 10h16M8.5 3.5v4M15.5 3.5v4"/></symbol>
+      <symbol id="i-expand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><path d="M16.9 7.1v.1"/></symbol>
+      <symbol id="i-facebook" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.2 21v-8h2.7l.5-3.2h-3.2V7.9c0-.9.4-1.6 1.7-1.6h1.6V3.5a17 17 0 00-2.4-.2c-2.4 0-4 1.5-4 4.1v2.4H8.2V13h2.9v8z"/></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8.2 10.5V16M8.2 7.9v.1M12 16v-5.5m0 2.2a2.4 2.4 0 014.8 0V16"/></symbol>
+      <symbol id="i-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></symbol>
+    </defs>
+  </svg>
+
+  <a class="skip-link" href="#content" data-i18n="skip">Aller au contenu</a>
+
+  <header class="site-header" data-header>
+    <div class="site-header__inner">
+      <a class="brand" href="#top" aria-label="AURELIA GRAND, Hotel & Resort — haut de page"><img src="assets/brand/aurelia-logo-horizontal-ivory.svg" alt="AURELIA GRAND" width="330" height="22"></a>
+      <nav class="nav" aria-label="Navigation principale" data-nav-wrap><ul class="nav__list" data-nav></ul></nav>
+      <div class="lang" role="group" aria-label="Langue" data-lang-switch>
+        <button type="button" data-lang="en" lang="en" aria-pressed="false">EN</button><span aria-hidden="true"></span><button type="button" data-lang="fr" lang="fr" aria-pressed="true">FR</button>
+      </div>
+      <a class="btn btn--line btn--sm site-header__cta" href="#book" data-book-cta>Réserver</a>
+      <a class="btn btn--line btn--sm site-header__book-sm" href="#book" data-book-cta>Réserver</a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="menu" data-burger><span></span><span></span><span></span><span class="sr-only" data-burger-label>Ouvrir le menu</span></button>
+    </div>
+  </header>
+
+  <div class="menu" id="menu" data-menu role="dialog" aria-modal="true" aria-label="Menu" hidden>
+    <ul class="menu__list" data-menu-list></ul>
+    <div class="menu__foot">
+      <div class="lang" role="group" aria-label="Langue" data-lang-switch-menu>
+        <button type="button" data-lang="en" lang="en" aria-pressed="false">EN</button><span aria-hidden="true"></span><button type="button" data-lang="fr" lang="fr" aria-pressed="true">FR</button>
+      </div>
+      <a class="btn btn--solid" href="#book" data-menu-book>Réserver</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- LA VISITE : scène épinglée de photographies (aucune vidéo). Sans JavaScript, ou avec mouvement réduit, les photographies et leurs textes se lisent à la suite. -->
+    <section class="tour" id="top" data-tour aria-label="Une visite d'Aurelia Grand, en photographies">
+      <div class="tour__stage" data-stage>
+        <div class="tour__scenes" data-scenes>
+          <div class="scene is-live" data-scene="facade">
+            <div class="scene__media" data-media>
+          <!-- build:hero-picture -->
+          <picture>
+            <source media="(max-width: 767px), (orientation: portrait)" type="image/avif" srcset="assets/img/facade-m-540.avif 540w, assets/img/facade-m-800.avif 800w, assets/img/facade-m-1080.avif 1080w, assets/img/facade-m-1440.avif 1440w" sizes="100vw">
+            <source media="(max-width: 767px), (orientation: portrait)" type="image/webp" srcset="assets/img/facade-m-540.webp 540w, assets/img/facade-m-800.webp 800w, assets/img/facade-m-1080.webp 1080w, assets/img/facade-m-1440.webp 1440w" sizes="100vw">
+            <source type="image/avif" srcset="assets/img/facade-768.avif 768w, assets/img/facade-1280.avif 1280w, assets/img/facade-1920.avif 1920w, assets/img/facade-2560.avif 2560w" sizes="100vw">
+            <source type="image/webp" srcset="assets/img/facade-768.webp 768w, assets/img/facade-1280.webp 1280w, assets/img/facade-1920.webp 1920w, assets/img/facade-2560.webp 2560w" sizes="100vw">
+            <img src="assets/img/facade-1920.webp" width="2752" height="1536" alt="La façade en travertin et arcades d'Aurelia Grand, illuminée au coucher du soleil au-dessus d'un bassin miroir" fetchpriority="high" decoding="async">
+          </picture>
+          <!-- /build:hero-picture -->
+            </div>
+          </div>
+        </div>
+        <div class="tour__shade" aria-hidden="true" data-shade><i data-shade-bottom></i><i data-shade-left></i><i data-shade-right></i><i data-shade-center></i></div>
+        <div class="tour__chapters" data-chapters>
+          <article class="chapter chapter--hero is-on" data-chapter="hero" data-layout="hero">
+            <div class="chapter__inner">
+              <p class="eyebrow chapter__eyebrow" data-fx><span class="i18n-en">Hotel &amp; Resort</span><span class="i18n-fr">Hôtel &amp; Resort</span></p>
+              <h1 class="chapter__title chapter__title--hero"><span class="w"><span class="hero-word">AURELIA</span></span> <span class="w"><span class="hero-word">GRAND</span></span></h1>
+              <p class="chapter__text" data-fx><span class="i18n-en">An extraordinary stay.</span><span class="i18n-fr">Un séjour extraordinaire.</span></p>
+              <div class="chapter__actions" data-fx>
+                <a class="btn btn--line" href="#intro" data-tour-start><span class="i18n-en">Discover the hotel</span><span class="i18n-fr">Découvrir l’hôtel</span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-down"/></svg></a>
+                <a class="btn btn--solid" href="#book"><span class="i18n-en">Book your stay</span><span class="i18n-fr">Réserver votre séjour</span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="tour__ui" data-tour-ui></div>
+        <a class="tour__skip" href="#intro" data-tour-skip><span class="i18n-en">Skip the visit</span><span class="i18n-fr">Passer la visite</span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-down"/></svg></a>
+      </div>
+      <div class="tour__end" data-tour-end></div>
+    </section>
+
+    <div id="content" tabindex="-1"></div>
+
+    <section class="section intro on-light" id="intro" aria-labelledby="intro-title" data-section="intro"></section>
+    <section class="section stay on-linen" id="stay" aria-labelledby="stay-title" data-section="stay"></section>
+    <section class="section dining on-espresso" id="dining" aria-labelledby="dining-title" data-section="dining"></section>
+    <section class="section wellness on-light" id="wellness" aria-labelledby="wellness-title" data-section="wellness"></section>
+    <section class="section experiences on-dark" id="experiences" aria-labelledby="experiences-title" data-section="experiences"></section>
+    <section class="section gallery on-linen" id="gallery" aria-labelledby="gallery-title" data-section="gallery"></section>
+    <section class="section offers on-espresso" id="offers" aria-labelledby="offers-title" data-section="offers"></section>
+    <section class="section reviews on-light" id="reviews" aria-labelledby="reviews-title" data-section="reviews"></section>
+    <section class="section booking on-dark" id="book" aria-labelledby="book-title" data-section="booking"></section>
+    <section class="section contact on-linen" id="contact" aria-labelledby="contact-title" data-section="contact"></section>
+  </main>
+
+  <footer class="site-footer on-dark" data-footer></footer>
+
+  <nav class="book-bar" aria-label="Réserver votre séjour" data-book-bar hidden><a href="#book"><span class="i18n-en">Book your stay</span><span class="i18n-fr">Réserver votre séjour</span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></a></nav>
+
+  <!-- Fiche détaillée (chambre, table, bien-être, offre, page légale) : #/room/…, #/dining/…, #/wellness/…, #/offer/…, #/legal/… -->
+  <dialog class="detail" data-detail aria-labelledby="detail-title"></dialog>
+  <!-- Visionneuse de la galerie -->
+  <dialog class="lightbox" data-lightbox aria-label="Visionneuse de photographies"></dialog>
+
+  <noscript>
+    <p class="noscript">Activez JavaScript pour explorer Aurelia Grand : la visite, les chambres, les tables et la demande de réservation sont construites par script. · Please enable JavaScript to explore Aurelia Grand.</p>
+  </noscript>
+
+  <!-- Données de l'hôtel -->
+  <script src="assets/js/lib/core.js"></script>
+  <script src="assets/js/data/photos-manifest.js"></script>
+  <script src="assets/js/data/photos.js"></script>
+  <script src="assets/js/data/hotel.js"></script>
+  <script src="assets/js/data/tour.js"></script>
+  <script src="assets/js/data/rooms.js"></script>
+  <script src="assets/js/data/dining.js"></script>
+  <script src="assets/js/data/wellness.js"></script>
+  <script src="assets/js/data/experiences.js"></script>
+  <script src="assets/js/data/booking.js"></script>
+  <!-- Animations -->
+  <script src="assets/js/animations/engine.js"></script>
+  <script src="assets/js/animations/transitions.js"></script>
+  <script src="assets/js/animations/tour.js"></script>
+  <script src="assets/js/animations/reveal.js"></script>
+  <!-- Composants -->
+  <script src="assets/js/components/detail.js"></script>
+  <script src="assets/js/components/lightbox.js"></script>
+  <!-- Réservation -->
+  <script src="assets/js/booking/booking.js"></script>
+  <!-- Sections -->
+  <script src="assets/js/sections/intro.js"></script>
+  <script src="assets/js/sections/stay.js"></script>
+  <script src="assets/js/sections/dining.js"></script>
+  <script src="assets/js/sections/wellness.js"></script>
+  <script src="assets/js/sections/experiences.js"></script>
+  <script src="assets/js/sections/gallery.js"></script>
+  <script src="assets/js/sections/offers.js"></script>
+  <script src="assets/js/sections/reviews.js"></script>
+  <script src="assets/js/sections/booking.js"></script>
+  <script src="assets/js/sections/contact.js"></script>
+  <script src="assets/js/sections/footer.js"></script>
+  <!-- Navigation -->
+  <script src="assets/js/navigation/header.js"></script>
+  <script src="assets/js/navigation/router.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

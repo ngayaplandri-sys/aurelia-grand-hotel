@@ -1,0 +1,22 @@
+# Dépendances (réinstallables avec npm install)
+node_modules/
+
+# Réglages locaux
+.claude/
+.DS_Store
+Thumbs.db
+
+# Captures et essais de contrôle (outils scripts/qa-*.mjs) : jetables
+production/review/
+
+# Version de production (npm run build) : recréée à la demande
+dist/
+
+# Journal de reprise Higgsfield (identifiants de tâches du compte) : reste local, jamais publié
+production/sources/_jobs.json
+
+# Secrets et réglages d'environnement : ne jamais les suivre
+.env
+.env.*
+*.pem
+*.key

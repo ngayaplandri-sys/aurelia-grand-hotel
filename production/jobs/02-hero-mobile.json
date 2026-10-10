@@ -1,0 +1,61 @@
+{
+  "outDir": "production/sources",
+  "bible": "production/bible-block.txt",
+  "model": "nano_banana_pro",
+  "args": { "--resolution": "2k" },
+  "concurrency": 4,
+  "items": [
+    {
+      "name": "facade-m", "aspect": "9:16", "refs": ["production/sources/facade.webp"],
+      "prompt": "The reference image is a horizontal photograph of this exact hotel. Recompose it as a tall vertical 9:16 portrait photograph of the same scene: same hotel, same sunset sky, same reflecting pool in the foreground, same olive tree and cypress trees. The camera stands slightly further back so the central five arched bays and the monumental arched entrance portal fill the middle of the frame, the rooftop pergola near the top, a calm expanse of soft apricot sky above it, and the long reflecting pool with the mirrored glowing windows occupying the lower third. Perfectly symmetrical, majestic, quiet. Nobody in frame."
+    },
+    {
+      "name": "entrance-m", "aspect": "9:16", "refs": ["production/sources/entrance.png"],
+      "prompt": "The reference image is a horizontal photograph of this exact scene. Recompose it as a tall vertical 9:16 portrait photograph of the same moment: the camera slightly lower so the full height of the moulded travertine arch rises over the open tall bronze-and-glass doors, the warm amber lobby with its amber-glass chandelier and the sea beyond visible through the doors, the two bronze candle lanterns on stone plinths either side, the doorman in a charcoal jacket small on the right holding a door, the honed travertine floor with fine bronze inlay lines filling the lower third. Same hotel, same dusk light."
+    },
+    {
+      "name": "lobby-m", "aspect": "9:16", "refs": ["production/sources/lobby.webp"],
+      "prompt": "The reference image is an ultra-wide photograph of this exact lobby. Recompose it as a tall vertical 9:16 portrait photograph of the same hall, perfectly symmetrical, looking up the double height: the monumental amber-glass globe chandelier in the upper third, tall arched glass doors and the golden sea view in the middle, the rounded ivory bouclé sofas, olive tree and fluted smoked-oak towers framing the sides, the honed travertine floor with fine bronze inlay lines converging in the lower third. Three guests far away in the doorway, small. Same hotel, same golden light."
+    },
+    {
+      "name": "reception-m", "aspect": "9:16", "refs": ["production/sources/reception.png"],
+      "prompt": "The reference image is a horizontal photograph of this exact scene. Recompose it as a tall vertical 9:16 portrait photograph of the same moment: the smiling concierge in the charcoal jacket behind the travertine and fluted smoked-oak reception desk in the upper-centre handing a key folder to the couple seen from behind in the lower right, the bronze lamp and olive branches in a ceramic vase on the left, the amber-glass chandelier glowing above, the large abstract artwork softly behind. Shallow depth of field, warm golden light, same hotel."
+    },
+    {
+      "name": "corridor-m", "aspect": "9:16", "refs": ["production/sources/corridor.png"],
+      "prompt": "The reference image is a horizontal photograph of this exact corridor. Recompose it as a tall vertical 9:16 portrait photograph of the same corridor in one-point perspective, perfectly symmetrical: the cream carpet runner and travertine floor with the bronze inlay line in the lower half, the tall arched niches with fluted smoked-oak doors and bronze sconces on both sides, the skylight panels on the ceiling above, and at the far end the arched window glowing golden with the sea in the upper-middle. Hushed, calm, nobody in frame. Same hotel."
+    },
+    {
+      "name": "suite-m", "aspect": "9:16", "refs": ["production/sources/suite.png"],
+      "prompt": "The reference image is a horizontal photograph of this exact suite. Recompose it as a tall vertical 9:16 portrait photograph of the same room in warm golden morning light: the low king bed with ivory linen and champagne throw against the fluted smoked-oak wall in the centre, the cream bouclé armchair and travertine coffee table in the lower-left foreground, the tall arched dark-bronze glass doors with sheer curtains on the right showing the sea and a linen lounger on the terrace, soft light patterns on the ceiling. Same hotel, calm and luxurious, nobody in frame."
+    },
+    {
+      "name": "view-m", "aspect": "9:16", "refs": ["production/sources/view.png"],
+      "prompt": "The reference image is a horizontal photograph of this exact view. Recompose it as a tall vertical 9:16 portrait photograph of the same sunrise: a large soft golden sky with thin pink clouds and the low sun filling the upper half, the calm sea with a glittering sun path and distant headlands in the middle, old olive trees and cypresses on the headland, and the honed travertine terrace with the slim bronze railing and two ivory linen loungers in the lower third. A glimpse of the hotel's arched terraces at the left edge. Space, escape, peace, nobody in frame."
+    },
+    {
+      "name": "dining-terrace-m", "aspect": "9:16", "refs": ["production/sources/dining-terrace.png"],
+      "prompt": "The reference image is a horizontal photograph of this exact terrace. Recompose it as a tall vertical 9:16 portrait photograph of the same arched travertine loggia at golden hour: the tall arches receding in perspective on the left, a waiter in a charcoal jacket serving a guest in the middle distance, tables with ivory linen, glassware and small bronze lamps in the lower half, a large olive tree in a stone pot on the left, the glittering sea framed by the last arch on the right. Same hotel, warm and inviting."
+    },
+    {
+      "name": "dish-m", "aspect": "9:16", "refs": ["production/sources/dish.png"],
+      "prompt": "The reference image is a horizontal photograph of this exact dish. Recompose it as a tall vertical 9:16 portrait macro photograph of the same moment: the sand-coloured stoneware plate with the seared sea bass fillet, saffron emulsion, fennel shavings and edible flowers in the exact centre, the chef's hand in the white jacket placing a herb leaf with bronze tweezers from the top right, a bronze fork at the lower left, amber glass tealight holders and warm golden bokeh behind in the upper area. Shallow depth of field, gourmet editorial photography."
+    },
+    {
+      "name": "dining-room-m", "aspect": "9:16", "refs": ["production/sources/dining-room.png"],
+      "prompt": "The reference image is a horizontal photograph of this exact dining room. Recompose it as a tall vertical 9:16 portrait photograph of the same room at dusk: round tables with ivory linen, bronze candle lamps and sand-coloured plates in the lower half, cream upholstered chairs, the cluster of amber-glass globe pendants hanging in the upper third, the tall arched bronze-framed windows in the centre showing the sea and a pine tree in the last light, walls of fluted smoked oak on both sides, a waiter in a charcoal jacket and guests far away. Warm candlelight, same hotel."
+    },
+    {
+      "name": "spa-m", "aspect": "9:16", "refs": ["production/sources/spa.png"],
+      "prompt": "The reference image is a horizontal photograph of this exact spa. Recompose it as a tall vertical 9:16 portrait photograph of the same sanctuary: the vaulted honed-travertine ceiling with the skylight letting soft light fall from the top, the layered arches receding to a warm glowing alcove in the centre, the shallow dark mosaic pool lit softly from below in the lower middle, the stack of smooth stones and tall candles at the lower left, the oak slatted bench with folded towels at the lower right. Hushed, warm, low-key, nobody in frame."
+    },
+    {
+      "name": "pool-m", "aspect": "9:16", "refs": ["production/sources/pool.png"],
+      "prompt": "The reference image is a horizontal photograph of this exact pool. Recompose it as a tall vertical 9:16 portrait photograph of the same luminous late afternoon: the long infinity pool of deep green-charcoal mosaic tile leading the eye from the lower foreground to the sea, ivory linen daybeds and parasols and an olive tree in a stone pot along the travertine deck on the left, the hotel's arched travertine terraces rising in warm light in the middle distance with its rooftop pergola, a soft sky with a few clouds filling the upper third. Fresh, airy, calm luxury, same hotel."
+    },
+    {
+      "name": "rooftop-m", "aspect": "9:16", "refs": ["production/sources/rooftop.png"],
+      "prompt": "The reference image is a horizontal photograph of this exact rooftop. Recompose it as a tall vertical 9:16 portrait photograph of the same blue hour: the rooftop terrace with the dark-bronze pergola strung with warm lights, cream bouclé lounge seating, travertine fire bowls and the glowing stone bar in the middle of the frame, the deep violet-blue sky with a last band of orange over the sea filling the upper third, and below, the travertine hotel with its tall glowing arched windows in the lower third. Magical, exclusive, refined, same hotel."
+    }
+  ]
+}

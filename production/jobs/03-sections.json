@@ -1,0 +1,316 @@
+{
+  "outDir": "production/sources",
+  "bible": "production/bible-block.txt",
+  "model": "nano_banana_2_lite",
+  "args": {},
+  "concurrency": 5,
+  "items": [
+    {
+      "name": "intro-loggia",
+      "aspect": "4:5",
+      "model": "nano_banana_pro",
+      "args": {
+        "--resolution": "2k"
+      },
+      "refs": [
+        "production/sources/facade.webp"
+      ],
+      "prompt": "Reference 1 is the hotel exterior: same hotel, use it for architecture, stone and light. Architectural photograph of the arched travertine loggia of AURELIA GRAND in raking late-afternoon sun: a rhythm of tall round arches casting long soft shadows across the honed travertine floor, a single cream linen chair, an old olive tree in a stone pot at the far end, deep warm shadows and glowing stone. Vertical composition, serene, geometric, nobody in frame."
+    },
+    {
+      "name": "intro-aerial",
+      "aspect": "16:9",
+      "model": "nano_banana_pro",
+      "args": {
+        "--resolution": "2k"
+      },
+      "refs": [
+        "production/sources/facade.webp",
+        "production/sources/pool.png"
+      ],
+      "prompt": "References show the same hotel from the front and from the pool terrace: keep the exact architecture. Elevated photograph of AURELIA GRAND on its sea-facing headland at golden hour: the stepped travertine terraces with their arched openings, the long infinity pool, the rooftop pergola, gardens of cypress and olive trees, the sea and a distant coastline in warm haze. Majestic, calm, nobody in frame."
+    },
+    {
+      "name": "room-deluxe",
+      "aspect": "3:2",
+      "model": "nano_banana_pro",
+      "args": {
+        "--resolution": "2k"
+      },
+      "refs": [
+        "production/sources/suite.png",
+        "production/sources/lobby.webp"
+      ],
+      "prompt": "References show the same hotel's suite and lobby: keep the same materials, furniture language and grade, never copy the composition. Editorial interior photograph of a Deluxe Room of AURELIA GRAND in soft morning light: a king bed with ivory linen and a fluted smoked-oak headboard, a small cream bouclé armchair, a slim travertine console with a bronze lamp, sheer curtains, and an arched dark-bronze glass door opening onto a small balcony with a sea view. Compact, serene, refined, nobody in frame."
+    },
+    {
+      "name": "room-executive",
+      "aspect": "3:2",
+      "model": "nano_banana_pro",
+      "args": {
+        "--resolution": "2k"
+      },
+      "refs": [
+        "production/sources/suite.png",
+        "production/sources/lobby.webp"
+      ],
+      "prompt": "References show the same hotel's suite and lobby: keep the same materials, furniture language and grade, never copy the composition. Editorial interior photograph of an Executive Room of AURELIA GRAND in warm late-afternoon light: a king bed against fluted smoked-oak panelling, a walnut writing desk with a bronze lamp and a leather chair by a tall arched window, a lounge corner with two cream bouclé armchairs and a round travertine table, a woven rug, the sea glimmering through sheer curtains. Calm, elegant, nobody in frame."
+    },
+    {
+      "name": "room-junior",
+      "aspect": "3:2",
+      "model": "nano_banana_pro",
+      "args": {
+        "--resolution": "2k"
+      },
+      "refs": [
+        "production/sources/suite.png",
+        "production/sources/lobby.webp"
+      ],
+      "prompt": "References show the same hotel's suite and lobby: keep the same materials, furniture language and grade, never copy the composition. Editorial interior photograph of a Junior Suite of AURELIA GRAND at golden hour: an open space with a low bed dressed in ivory linen on the left, a curved cream bouclé sofa and a travertine coffee table in a sitting area in the centre, a small round dining table by the window, and tall arched glass doors on the right opening to a terrace with the sea beyond; warm lime-plaster walls, a bronze floor lamp. Spacious, luminous, nobody in frame."
+    },
+    {
+      "name": "room-presidential",
+      "aspect": "3:2",
+      "model": "nano_banana_pro",
+      "args": {
+        "--resolution": "2k"
+      },
+      "refs": [
+        "production/sources/lobby.webp",
+        "production/sources/suite.png"
+      ],
+      "prompt": "References show the same hotel's lobby and suite: keep the same materials, furniture language and grade, never copy the composition. Editorial interior photograph of the Presidential Suite of AURELIA GRAND at sunset: a grand double-height living room with a wall of tall arched dark-bronze windows opening onto a private terrace with a plunge pool and the sea, a long curved cream bouclé sofa and two armchairs around a monumental travertine coffee table, a dining table for eight in the background under a cluster of amber-glass globe pendants, fluted smoked-oak panelling, a large abstract artwork. Majestic, warm, private, nobody in frame."
+    },
+    {
+      "name": "room-breakfast",
+      "aspect": "3:2",
+      "refs": [
+        "production/sources/suite.png"
+      ],
+      "prompt": "Reference 1 shows the same hotel's suite: keep the materials and grade. Photograph of a breakfast for two served on a small sea-view balcony of AURELIA GRAND in soft morning light: a round travertine table with croissants, fruit, a coffee pot and ivory cups, an arched dark-bronze glass door behind, the sea sparkling. Intimate, fresh, nobody in frame."
+    },
+    {
+      "name": "room-desk",
+      "aspect": "3:2",
+      "refs": [
+        "production/sources/suite.png"
+      ],
+      "prompt": "Reference 1 shows the same hotel's suite: keep the materials and grade. Detail photograph of a walnut writing desk in an Executive Room of AURELIA GRAND: a bronze lamp, a leather notebook, a ceramic vase with olive branches, a leather chair, beside a tall arched window with the sea glowing softly outside, warm light. Calm, refined, nobody in frame."
+    },
+    {
+      "name": "room-terrace",
+      "aspect": "3:2",
+      "refs": [
+        "production/sources/view.png"
+      ],
+      "prompt": "Reference 1 shows the same hotel's terraces: keep the materials and grade. Photograph of a private travertine terrace of a Junior Suite of AURELIA GRAND at golden hour: two ivory linen loungers, a small bronze side table with a glass of champagne, a slim bronze railing, olive trees in stone pots, the sea and a distant headland beyond. Peaceful, nobody in frame."
+    },
+    {
+      "name": "room-bath",
+      "aspect": "3:2",
+      "refs": [
+        "production/sources/suite.png"
+      ],
+      "prompt": "Reference 1 shows the same hotel's suite: keep the materials and grade. Editorial photograph of a suite bathroom of AURELIA GRAND: a freestanding honed-travertine bathtub beside a tall arched window with a sea view, walls and floor of travertine, a slim bronze tap, folded ivory towels on a fluted-oak bench, a small olive branch in a vase, soft golden light. Serene, nobody in frame."
+    },
+    {
+      "name": "room-pool-terrace",
+      "aspect": "3:2",
+      "refs": [
+        "production/sources/view.png",
+        "production/sources/pool.png"
+      ],
+      "prompt": "References show the same hotel's terraces and pool: keep the materials and grade. Photograph of the private terrace of the Presidential Suite of AURELIA GRAND at dusk: a plunge pool of dark green mosaic tile with its edge opening to the sea, a long travertine deck, two daybeds with ivory linen, lanterns glowing, olive and cypress trees, the sky turning apricot and violet. Exclusive, tranquil, nobody in frame."
+    },
+    {
+      "name": "chef",
+      "aspect": "4:5",
+      "model": "nano_banana_pro",
+      "args": {
+        "--resolution": "2k"
+      },
+      "refs": [
+        "production/sources/dish.png"
+      ],
+      "prompt": "Reference 1 shows the same restaurant's cuisine: keep the warm light and grade. Editorial portrait of the executive chef of AURELIA GRAND, a woman in her forties in a crisp white chef's jacket with discreet bronze buttons, calm and confident, arms relaxed, standing at the honed travertine pass of the kitchen with warm bronze pendant lights softly blurred behind her, shallow depth of field, natural skin, warm golden light, magazine-quality photography."
+    },
+    {
+      "name": "dish-starter",
+      "aspect": "4:5",
+      "refs": [
+        "production/sources/dish.png"
+      ],
+      "prompt": "Reference 1 shows the same restaurant's cuisine: keep the plating style and grade. Close-up gastronomic photograph of a starter: raw red prawns with citrus segments, shaved fennel, olive oil pearls and micro herbs on a sand-coloured handmade stoneware plate on ivory linen, a bronze spoon, amber candle bokeh behind, shallow depth of field, warm light."
+    },
+    {
+      "name": "dish-dessert",
+      "aspect": "1:1",
+      "refs": [
+        "production/sources/dish.png"
+      ],
+      "prompt": "Reference 1 shows the same restaurant's cuisine: keep the plating style and grade. Close-up gastronomic photograph of a dessert: a quenelle of vanilla cream with candied lemon, almond crumble and a drizzle of honey on a sand-coloured handmade stoneware plate on ivory linen, a bronze spoon, amber candle bokeh behind, shallow depth of field, warm light."
+    },
+    {
+      "name": "ingredients",
+      "aspect": "3:2",
+      "refs": [
+        "production/sources/dish.png"
+      ],
+      "prompt": "Reference 1 shows the same restaurant's cuisine: keep the warm grade. Photograph of fresh ingredients on a honed travertine counter in the kitchen of AURELIA GRAND: ripe lemons, figs, heirloom tomatoes, basil, a bottle of green olive oil, a whole sea bream on crushed ice, soft window light, rich textures, shallow depth of field."
+    },
+    {
+      "name": "table-detail",
+      "aspect": "4:5",
+      "refs": [
+        "production/sources/dining-room.png"
+      ],
+      "prompt": "Reference 1 shows the same dining room: keep the materials and grade. Detail photograph of a table setting at AURELIA GRAND: ivory linen, a sand-coloured stoneware plate, bronze cutlery, a crystal glass, a folded napkin, a small bronze candle lamp and a single olive branch, soft warm dusk light from an arched window, shallow depth of field."
+    },
+    {
+      "name": "service",
+      "aspect": "3:2",
+      "refs": [
+        "production/sources/dining-room.png"
+      ],
+      "prompt": "Reference 1 shows the same dining room: keep the materials and grade. Photograph of a sommelier in a tailored charcoal jacket pouring white wine into a crystal glass at a table dressed in ivory linen, a tall arched window with the sea at dusk behind, warm candlelight, shallow depth of field, attentive refined service."
+    },
+    {
+      "name": "spa-treatment",
+      "aspect": "4:5",
+      "refs": [
+        "production/sources/spa.png"
+      ],
+      "prompt": "Reference 1 shows the same spa: keep the materials and grade. Photograph of a treatment room of AURELIA GRAND spa: a massage table dressed in ivory linen, warm smooth stones in a bronze bowl, tall candles, a small tray of essential oils, an arched alcove with honed travertine walls, soft low light, hushed and warm, nobody in frame."
+    },
+    {
+      "name": "sauna",
+      "aspect": "4:5",
+      "refs": [
+        "production/sources/spa.png"
+      ],
+      "prompt": "Reference 1 shows the same spa: keep the materials and grade. Photograph of a sauna and hammam at AURELIA GRAND: a smoked-oak slatted sauna cabin with a glass door glowing warm, an arched honed-travertine steam room entrance, a bronze bucket and ladle, folded towels, faint steam, soft low light, nobody in frame."
+    },
+    {
+      "name": "fitness",
+      "aspect": "4:5",
+      "refs": [
+        "production/sources/spa.png",
+        "production/sources/lobby.webp"
+      ],
+      "prompt": "References show the same hotel: keep the materials and grade. Photograph of the fitness studio of AURELIA GRAND: a bright airy room with a honed travertine floor, tall arched windows with the sea beyond, a few pieces of minimal black and bronze equipment, a rack of dumbbells, folded towels, soft morning light, nobody in frame."
+    },
+    {
+      "name": "relax",
+      "aspect": "4:5",
+      "refs": [
+        "production/sources/spa.png"
+      ],
+      "prompt": "Reference 1 shows the same spa: keep the materials and grade. Photograph of the relaxation lounge at AURELIA GRAND: two daybeds with ivory linen cushions under sheer curtains, a low travertine table with a tea service and a bowl of figs, tall arched windows with soft diffused light, an olive tree in a stone pot, quiet and serene, nobody in frame."
+    },
+    {
+      "name": "exp-private-dinner",
+      "aspect": "3:2",
+      "model": "nano_banana_pro",
+      "args": {
+        "--resolution": "2k"
+      },
+      "refs": [
+        "production/sources/dining-terrace.png",
+        "production/sources/rooftop.png"
+      ],
+      "prompt": "References show the same hotel's terrace and rooftop: keep the materials and grade. Photograph of a private candlelit dinner for two on a terrace of AURELIA GRAND at blue hour: a single table dressed in ivory linen with bronze candle lamps and a bouquet of olive branches, a waiter in a charcoal jacket pouring champagne at a discreet distance, strings of warm lights, the sea and a violet-orange sky beyond. Romantic, exclusive, refined."
+    },
+    {
+      "name": "exp-excursion",
+      "aspect": "4:5",
+      "refs": [],
+      "prompt": "Photorealistic editorial travel photograph, vertical composition. A classic varnished wooden day boat with cream cushions floats alone in a small, remote, crystal-clear turquoise cove on a Mediterranean coast, at the foot of pale limestone cliffs topped with umbrella pines. Two guests in light linen clothing relax on the deck. Seen from slightly above, golden morning light, sparkling water, wild empty coastline: no buildings, no hotel, no terraces, no pool, no jetty. Warm natural colours, calm and aspirational.",
+      "model": "nano_banana_2_lite",
+      "args": {},
+      "bible": false
+    },
+    {
+      "name": "exp-culture",
+      "aspect": "1:1",
+      "refs": [
+        "production/sources/lobby.webp"
+      ],
+      "prompt": "Reference 1 shows the same hotel: keep the warm grade. Photograph of an artisan potter's workshop visited by hotel guests: a master ceramicist's hands shaping a sand-coloured clay vase on a wheel, shelves of handmade stoneware behind, soft window light, warm earthy tones, shallow depth of field, authentic and refined."
+    },
+    {
+      "name": "exp-events",
+      "aspect": "16:9",
+      "refs": [
+        "production/sources/dining-terrace.png",
+        "production/sources/facade.webp"
+      ],
+      "prompt": "References show the same hotel: keep the materials and grade. Photograph of an elegant outdoor reception at AURELIA GRAND at dusk: a long banquet table dressed in ivory linen with candles, olive branches and low flowers on the lawn terrace under old olive trees, strings of warm lights, the travertine hotel glowing behind, a few guests in evening wear far away. Celebratory yet refined."
+    },
+    {
+      "name": "exp-gastro",
+      "aspect": "4:5",
+      "refs": [
+        "production/sources/dining-room.png"
+      ],
+      "prompt": "Reference 1 shows the same dining room: keep the materials and grade. Photograph of a private wine tasting in the vaulted honed-travertine cellar of AURELIA GRAND: a sommelier in a charcoal jacket and two guests holding glasses around a stone table with candles, racks of bottles in arched niches, warm intimate light, shallow depth of field."
+    },
+    {
+      "name": "exp-relax",
+      "aspect": "3:2",
+      "refs": [
+        "production/sources/view.png"
+      ],
+      "prompt": "Reference 1 shows the same terrace: keep the light and grade. Photograph of a sunrise yoga session on the travertine terrace of AURELIA GRAND: a woman in a calm seated pose on a linen mat seen from behind, the sea and a soft golden sky ahead, olive trees at the edges, peaceful, minimal, warm light."
+    },
+    {
+      "name": "exp-service",
+      "aspect": "1:1",
+      "refs": [
+        "production/sources/suite.png"
+      ],
+      "prompt": "Reference 1 shows the same hotel's suite: keep the materials and grade. Photograph of a personal butler in a tailored charcoal jacket with discreet bronze buttons presenting a tray with a teapot, ivory cups and a handwritten note in a suite of AURELIA GRAND, a bed and arched windows softly blurred behind, warm morning light, discreet and attentive."
+    },
+    {
+      "name": "offer-romantic",
+      "aspect": "4:5",
+      "refs": [
+        "production/sources/view.png",
+        "production/sources/rooftop.png"
+      ],
+      "prompt": "References show the same hotel's terraces: keep the materials and grade. Photograph of a couple seen from behind clinking two champagne flutes on the travertine terrace of AURELIA GRAND at sunset, a bouquet of white flowers on a bronze table beside them, the sea and an apricot sky ahead, intimate, elegant, warm light."
+    },
+    {
+      "name": "detail-chandelier",
+      "aspect": "4:5",
+      "refs": [
+        "production/sources/lobby.webp"
+      ],
+      "prompt": "Reference 1 shows the same lobby: keep the exact chandelier design. Close-up architectural detail photograph of the monumental chandelier of hand-blown amber-glass globes on slender bronze rods of AURELIA GRAND, seen from below against a warm travertine ceiling, glowing softly, rich texture and reflections."
+    },
+    {
+      "name": "detail-bronze",
+      "aspect": "4:5",
+      "refs": [
+        "production/sources/corridor.png"
+      ],
+      "prompt": "Reference 1 shows the same corridor: keep the materials. Close-up detail photograph of a bronze door handle on a fluted smoked-oak door of AURELIA GRAND with a bronze wall sconce glowing beside it, warm lime-plaster wall, soft raking light, shallow depth of field, tactile and quiet."
+    },
+    {
+      "name": "detail-linen",
+      "aspect": "1:1",
+      "refs": [
+        "production/sources/suite.png"
+      ],
+      "prompt": "Reference 1 shows the same suite: keep the materials. Close-up detail photograph of ivory linen sheets and a champagne-coloured wool throw on the bed of a suite of AURELIA GRAND, a small tray with a glass of water and a sprig of olive, soft morning light, rich textile texture, shallow depth of field."
+    },
+    {
+      "name": "detail-art",
+      "aspect": "4:5",
+      "refs": [
+        "production/sources/lobby.webp"
+      ],
+      "prompt": "Reference 1 shows the same lobby: keep the materials and art style. Detail photograph of a honed travertine console in the lobby of AURELIA GRAND with a large abstract artwork in sand and bronze tones above, a ceramic vase with olive branches, a bronze bowl, warm light from the side, shallow depth of field, quiet luxury."
+    }
+  ]
+}

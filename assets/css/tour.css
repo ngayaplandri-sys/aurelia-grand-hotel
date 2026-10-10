@@ -1,0 +1,149 @@
+/* AURELIA GRAND · la visite : scène épinglée de photographies, chapitres, interface, mode fixe. */
+
+.tour { position: relative; background: var(--ink); color: var(--on-dark); }
+.tour__end { position: absolute; left: 0; bottom: 0; width: 1px; height: 1px; pointer-events: none; }
+.tour__stage { position: relative; height: 100vh; height: 100svh; min-height: 520px; overflow: hidden; isolation: isolate; background: var(--ink); }
+.is-cinematic .tour__stage { position: sticky; top: 0; height: 100vh; height: 100lvh; }
+
+/* ---------- Scènes ---------- */
+.tour__scenes { position: absolute; inset: 0; z-index: 0; }
+.scene { position: absolute; inset: 0; overflow: hidden; visibility: hidden; contain: layout paint; }
+.scene.is-live { visibility: visible; }
+.scene__out, .scene__in, .scene__media { position: absolute; inset: 0; }
+.scene__media { transform-origin: 50% 50%; backface-visibility: hidden; }
+.scene.is-live .scene__media, .scene.is-live .scene__in { will-change: transform; }
+.scene picture, .scene img { display: block; width: 100%; height: 100%; }
+.scene img { object-fit: cover; object-position: var(--op, 50% 50%); }
+.scene__layer { position: absolute; inset: 0; pointer-events: none; transform-origin: 50% 50%; will-change: transform; }
+.scene__layer picture, .scene__layer img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: var(--op, 50% 50%); }
+.scene__veil { position: absolute; inset: 0; background: #0b0907; opacity: 0; pointer-events: none; }
+.scene__frame { position: absolute; inset: 0; border: 1px solid rgba(217, 195, 157, .45); pointer-events: none; opacity: 0; }
+@media (max-width: 767px), (orientation: portrait) { .scene img { object-position: var(--op-m, var(--op, 50% 50%)); } }
+
+/* Dégradés de lisibilité : un seul actif à la fois selon le chapitre affiché */
+.tour__shade { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
+.tour__shade i { position: absolute; inset: 0; opacity: 0; }
+.tour__shade::before { content: ""; position: absolute; inset: 0; background: radial-gradient(120% 95% at 50% 46%, rgba(11, 9, 7, 0) 58%, rgba(11, 9, 7, .34) 100%); }
+.tour__shade [data-shade-bottom] { background: linear-gradient(to top, rgba(11, 9, 7, .8) 0%, rgba(11, 9, 7, .52) 26%, rgba(11, 9, 7, .14) 52%, rgba(11, 9, 7, 0) 70%); }
+.tour__shade [data-shade-left] { background: linear-gradient(to right, rgba(11, 9, 7, .78) 0%, rgba(11, 9, 7, .5) 30%, rgba(11, 9, 7, .08) 58%, rgba(11, 9, 7, 0) 70%); }
+.tour__shade [data-shade-right] { background: linear-gradient(to left, rgba(11, 9, 7, .78) 0%, rgba(11, 9, 7, .5) 30%, rgba(11, 9, 7, .08) 58%, rgba(11, 9, 7, 0) 70%); }
+.tour__shade [data-shade-center] { background: radial-gradient(ellipse 62% 52% at 50% 50%, rgba(11, 9, 7, .62), rgba(11, 9, 7, .3) 55%, rgba(11, 9, 7, 0) 78%); }
+.is-static .tour__shade [data-shade-bottom] { opacity: 1; }
+
+/* ---------- Chapitres (textes) ---------- */
+.tour__chapters { position: absolute; inset: 0; z-index: 3; pointer-events: none; }
+.chapter { position: absolute; color: var(--on-dark); pointer-events: auto; }
+.chapter__inner { position: relative; }
+.chapter__eyebrow { margin-bottom: 22px; }
+.chapter__title { font-size: clamp(2.6rem, 1.2rem + 4.8vw, 6.4rem); font-weight: 300; line-height: .98; letter-spacing: -.015em; text-wrap: balance; }
+.chapter__title em { font-style: italic; font-weight: 300; }
+.chapter__text { margin-top: 24px; font-family: var(--f-display); font-style: italic; font-weight: 300; font-size: clamp(1.5rem, 1.1rem + 1.2vw, 2.3rem); line-height: 1.15; letter-spacing: .01em; }
+.chapter__sign { margin-top: 30px; display: flex; align-items: center; gap: 16px; font-size: .7rem; font-weight: 500; letter-spacing: .3em; text-transform: uppercase; color: var(--champagne); }
+.chapter__sign::before { content: ""; width: 46px; height: 1px; background: currentColor; }
+.chapter__actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 40px; }
+
+/* Mise en page des chapitres : le texte se pose là où la photographie est calme */
+.chapter--hero, .chapter--quote, .chapter--bl, .chapter--finale { left: var(--gutter); bottom: clamp(88px, 14vh, 160px); width: min(100% - 2 * var(--gutter), 76rem); }
+.chapter--hero { width: min(100% - 2 * var(--gutter), 98rem); }
+.chapter--quote { width: min(100% - 2 * var(--gutter), 44rem); }
+.chapter--bl { width: min(100% - 2 * var(--gutter), 40rem); }
+.chapter--left { left: var(--gutter); top: 50%; translate: 0 -50%; width: min(34rem, 42vw); }
+.chapter--right { right: calc(var(--gutter) + 3vw); top: 50%; translate: 0 -50%; width: min(34rem, 40vw); }
+.chapter--center { left: 50%; top: 50%; translate: -50% -50%; width: min(52rem, 100% - 2 * var(--gutter)); text-align: center; }
+.chapter--center .chapter__eyebrow { justify-content: center; }
+.chapter--center .chapter__eyebrow::before { display: none; }
+.chapter--center .chapter__actions { justify-content: center; }
+.chapter--finale { width: min(100% - 2 * var(--gutter), 64rem); }
+.chapter--finale .chapter__title { font-size: clamp(2.8rem, 1.2rem + 5.4vw, 7rem); }
+.chapter--hero .chapter__title { font-size: clamp(3rem, 1rem + 8.2vw, 10.4rem); font-weight: 300; line-height: .9; letter-spacing: .07em; text-transform: uppercase; margin-left: -.04em; }
+.chapter--hero .chapter__text { margin-top: 26px; font-size: clamp(1.6rem, 1.1rem + 1.6vw, 2.8rem); }
+.chapter--quote .chapter__title { font-size: clamp(2.8rem, 1.2rem + 5.2vw, 7rem); }
+.chapter--hero .hero-word { display: inline-block; }
+.chapter:not(.is-on) { pointer-events: none; }
+
+/* Avant que le script ne démarre l'ouverture : le texte du héros attend, masqué, pour apparaître d'un geste */
+.js-reveal.is-cinematic .chapter--hero .w > span { transform: translate3d(0, 108%, 0); }
+.js-reveal.is-cinematic .chapter--hero [data-fx] { opacity: 0; }
+
+/* ---------- Interface de la visite ---------- */
+.tour__ui { position: absolute; inset: 0; z-index: var(--z-tour-ui); pointer-events: none; }
+.tour__count { position: absolute; left: var(--gutter); bottom: 34px; display: flex; align-items: baseline; gap: 18px; font-size: .68rem; letter-spacing: .3em; text-transform: uppercase; color: var(--on-dark-2); }
+.tour__demo { padding-left: 18px; margin-left: 2px; border-left: 1px solid var(--hair-dark); font-size: .6rem; letter-spacing: .26em; color: var(--on-dark-3); }
+.tour__num { font-family: var(--f-display); font-size: 1.7rem; letter-spacing: .06em; color: var(--champagne); font-variant-numeric: lining-nums; line-height: 1; }
+.tour__rail { position: absolute; right: calc(var(--gutter) * .55); top: 50%; transform: translateY(-50%); pointer-events: auto; }
+.tour__rail ol { display: grid; gap: 1px; }
+.tour__rail button { width: 40px; height: 22px; display: flex; align-items: center; justify-content: flex-end; background: none; border: 0; padding: 0; cursor: pointer; }
+.tour__rail button span { display: block; width: 8px; height: 1px; background: rgba(244, 238, 227, .6); transition: width .6s var(--ease), background-color .3s; }
+.tour__rail button.is-on span { width: 26px; background: var(--champagne); }
+.tour__rail button:hover span, .tour__rail button:focus-visible span { width: 18px; background: var(--ivory); }
+.tour__bar { position: absolute; inset: auto 0 0 0; height: 2px; background: rgba(244, 238, 227, .1); }
+.tour__bar span { display: block; height: 100%; background: var(--champagne); transform-origin: 0 50%; transform: scaleX(0); }
+.tour__cue { position: absolute; left: 50%; bottom: 28px; translate: -50% 0; display: grid; justify-items: center; gap: 12px; font-size: .62rem; letter-spacing: .36em; text-transform: uppercase; color: var(--on-dark-2); opacity: 0; }
+.tour__cue i { display: block; width: 1px; height: 48px; background: linear-gradient(to bottom, rgba(244, 238, 227, .75), rgba(244, 238, 227, 0)); transform-origin: top; animation: cue 2.6s var(--ease-in-out) infinite; }
+@keyframes cue { 0% { transform: scaleY(0); opacity: 1; } 50% { transform: scaleY(1); opacity: 1; } 100% { transform: scaleY(1); opacity: 0; } }
+.tour__skip {
+  position: absolute; right: var(--gutter); bottom: 28px; z-index: var(--z-tour-ui); display: inline-flex; align-items: center; gap: .9em; padding: 10px 0;
+  font-size: .68rem; font-weight: 600; letter-spacing: .28em; text-transform: uppercase; text-decoration: none; color: var(--on-dark-2); transition: color .3s;
+}
+.tour__skip:hover { color: var(--champagne); }
+.tour__skip .icon { transition: transform .5s var(--ease); }
+.tour__skip:hover .icon { transform: translateY(3px); }
+.tour__skip::after { content: ""; position: absolute; left: 0; right: 0; bottom: 4px; height: 1px; background: currentColor; opacity: .4; }
+
+@media (max-width: 767px), (orientation: portrait) {
+  .tour__shade [data-shade-bottom], .tour__shade [data-shade-left], .tour__shade [data-shade-right], .tour__shade [data-shade-center] { background: linear-gradient(to top, rgba(11, 9, 7, .9) 0%, rgba(11, 9, 7, .66) 30%, rgba(11, 9, 7, .2) 58%, rgba(11, 9, 7, 0) 74%); }
+  .chapter { left: var(--gutter) !important; right: var(--gutter) !important; top: auto !important; translate: none !important; width: auto !important; bottom: calc(96px + env(safe-area-inset-bottom)) !important; }
+  .chapter--center { text-align: left; }
+  .chapter--center .chapter__eyebrow { justify-content: flex-start; }
+  .chapter--center .chapter__eyebrow::before { display: inline-block; }
+  .chapter--center .chapter__actions { justify-content: flex-start; }
+  .chapter__title { font-size: clamp(2.5rem, 1.2rem + 7.4vw, 3.6rem); }
+  .chapter--hero .chapter__title { font-size: clamp(3rem, 1rem + 13.4vw, 5rem); letter-spacing: .05em; line-height: .94; }
+  .chapter--hero .chapter__title .w { display: block; }
+  .chapter--hero .chapter__text { font-size: 1.6rem; margin-top: 18px; }
+  .chapter--finale .chapter__title, .chapter--quote .chapter__title { font-size: clamp(2.5rem, 1.2rem + 7.4vw, 3.6rem); }
+  .chapter__actions { margin-top: 28px; gap: 10px; }
+  .chapter__actions .btn { flex: 1 1 auto; min-width: 0; padding: 0 18px; }
+  .tour__rail { display: none; }
+  .tour__count { bottom: 30px; }
+  .tour__demo { display: none; }
+  .tour__skip { bottom: 22px; }
+  .tour__cue { display: none; }
+}
+@media (max-width: 400px) {
+  .tour__label { display: none; }
+}
+@media (max-height: 600px) and (min-width: 768px) {
+  .chapter--hero, .chapter--quote, .chapter--bl, .chapter--finale { bottom: 72px; }
+  .chapter--hero .chapter__actions { margin-top: 24px; }
+}
+
+/* ---------- Mode fixe : photographies et textes à la suite (mouvement réduit, économie de données, ?fixe) ---------- */
+.is-static .tour__ui, .is-static .tour__skip { display: none; }
+.is-static .chapter--hero { opacity: 1; }
+.tour__panels { position: relative; }
+.tpanel { position: relative; isolation: isolate; min-height: 92vh; min-height: 92svh; display: flex; flex-direction: column; justify-content: flex-end; padding: calc(var(--header-h) + 48px) var(--gutter) clamp(52px, 10vh, 110px); background: var(--ink); }
+.tpanel__media { position: absolute; inset: 0; z-index: -2; }
+.tpanel__media picture, .tpanel__media img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: var(--op, 50% 50%); }
+.tpanel::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, rgba(11, 9, 7, .86), rgba(11, 9, 7, .42) 46%, rgba(11, 9, 7, .12) 100%); }
+.tpanel__inner { width: min(100%, 44rem); }
+.tpanel--text { min-height: 56vh; min-height: 56svh; justify-content: center; padding-block: clamp(64px, 12vh, 140px); background: var(--ink); }
+.tpanel--text::after { display: none; }
+.tpanel--text .chapter__title { font-size: clamp(2.6rem, 1.2rem + 5vw, 6.4rem); }
+.tpanel--right { align-items: flex-end; }
+.tpanel--center { align-items: center; text-align: center; }
+.tpanel--center .chapter__eyebrow { justify-content: center; }
+.tpanel--center .chapter__eyebrow::before { display: none; }
+.tpanel--center .chapter__actions { justify-content: center; }
+.tpanel .chapter__title { font-size: clamp(2.5rem, 1.2rem + 4.6vw, 5.6rem); }
+.tpanel__extras { display: flex; gap: 12px; margin-top: 30px; width: min(100%, 44rem); }
+.tpanel__extra { flex: 1 1 0; aspect-ratio: 4 / 3; overflow: hidden; }
+.tpanel__extra picture, .tpanel__extra img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.is-static .tour__stage { height: 100vh; height: 100svh; }
+.is-static .chapter--hero { position: absolute; }
+@media (max-width: 767px), (orientation: portrait) {
+  .tpanel { min-height: 86svh; }
+  .tpanel--center { align-items: flex-start; text-align: left; }
+  .tpanel--center .chapter__eyebrow { justify-content: flex-start; }
+  .tpanel--center .chapter__eyebrow::before { display: inline-block; }
+}

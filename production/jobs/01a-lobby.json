@@ -1,0 +1,14 @@
+{
+  "outDir": "production/sources",
+  "bible": "production/bible-block.txt",
+  "model": "nano_banana_pro",
+  "args": { "--resolution": "2k" },
+  "concurrency": 2,
+  "items": [
+    {
+      "name": "lobby", "aspect": "21:9",
+      "refs": ["production/sources/facade.webp", "production/references/lobby-ref.jpg"],
+      "prompt": "Reference 1 shows the exterior of the hotel: use it for the architectural language, materials and palette. Reference 2 shows the lobby: recreate this exact composition and mood at the highest fidelity and finest detail. Ultra-wide editorial interior photograph of the grand lobby of AURELIA GRAND, perfectly symmetrical, seen from the entrance: a double-height hall with a long central axis of honed travertine floor with fine bronze inlay lines leading to tall arched glass doors in slender dark-bronze frames that open onto the terrace and the sea at golden hour. A monumental sculptural chandelier of hand-blown amber-glass globes on bronze rods hangs above the central seating. Rounded ivory bouclé sofas, low walnut and travertine tables, fluted smoked-oak towers, wall sconces in bronze, a large abstract artwork in sand and bronze tones, an old olive tree in a stone pot. Walls of warm ivory-cream lime plaster, not yellow. Soft golden light from the arched windows mixed with a gentle tungsten glow. Three guests and one staff member in a charcoal jacket far away in the hall, small in the frame. Quiet, majestic, welcoming, luxurious."
+    }
+  ]
+}

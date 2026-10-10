@@ -1,0 +1,25 @@
+{
+  "outDir": "production/sources",
+  "bible": false,
+  "model": "gpt_image_2_5",
+  "args": {
+    "--resolution": "2k",
+    "--quality": "medium",
+    "--background": "transparent"
+  },
+  "concurrency": 2,
+  "items": [
+    {
+      "name": "fg-olive",
+      "aspect": "16:9",
+      "bible": false,
+      "prompt": "A photograph of a single olive tree branch with silvery-green leaves and a few small olives, entering from the top-right corner of the frame and extending toward the centre, shot as an out-of-focus foreground element with soft creamy bokeh and gentle warm backlight, fully isolated on a transparent background (alpha channel), nothing else in the image, no ground, no sky, no tree trunk."
+    },
+    {
+      "name": "fg-lights",
+      "aspect": "16:9",
+      "bible": false,
+      "prompt": "A photograph of two sagging strings of warm golden festoon lights hanging across the upper part of the frame, shot as a heavily out-of-focus foreground element: large soft glowing round bokeh orbs of warm amber light with delicate dark wire between them, fully isolated on a transparent background (alpha channel), nothing else in the image, no sky, no building, no pergola, no people."
+    }
+  ]
+}
