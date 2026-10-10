@@ -4,6 +4,9 @@
   "private": true,
   "description": "AURELIA GRAND Hotel & Resort : site d'hôtel de luxe cinématographique et photographique, piloté par le défilement. Aucune vidéo : uniquement des photographies animées par le code.",
   "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
     "serve": "node scripts/serve.mjs",
     "images": "node scripts/build-images.mjs",

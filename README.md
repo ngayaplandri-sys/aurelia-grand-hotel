@@ -112,6 +112,8 @@ Les outils pilotent Chrome sans interface (`puppeteer-core`, Chrome installé su
 npm run build      # crée dist/ : un seul fichier JS et un seul CSS minifiés + images, polices, logos (≈ 30 Mo)
 ```
 
+**Vercel** : importez le dépôt GitHub, rien à régler. `vercel.json` indique la commande (`npm run build`), le dossier de sortie (`dist`) et le cache long des images et polices ; `package.json` demande Node ≥ 22.12 (Vercel choisit alors Node 24). Chaque `git push` redéploie. Si un déploiement échoue, la cause est dans le journal du déploiement, sur la page du projet Vercel, onglet *Deployments*, premières lignes rouges.
+
 Envoyez le contenu de **`dist/`** chez n'importe quel hébergeur statique (GitHub Pages, Netlify…). Pour l'essayer avant : `SERVE_DIR=dist PORT=4181 npm run serve`. (Sans build, `index.html` et `assets/` fonctionnent aussi tels quels.) N'envoyez ni `node_modules/`, ni `production/`, ni `scripts/`. Cache long recommandé sur `assets/img/` et `assets/fonts/` ; aucun cache sur le HTML, le CSS et le JS.
 
 ## Avant de publier
